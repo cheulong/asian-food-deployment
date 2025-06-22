@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}-deployment
+  namespace: default
+  labels:
+    app: {{ .Values.appName }}
+    type: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+      type: frontend
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+        type: frontend
+    spec:
+      containers:
+        - name: asian-food-container
+          image: cheulong/asian-food-web-prod
+          ports:
+            - containerPort: 80
