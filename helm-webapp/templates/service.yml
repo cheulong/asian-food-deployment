@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: asian-food-service
+  name: {{ .Values.appName }}-service
   namespace: {{ .Values.namespace }}
 spec:
   type: NodePort
