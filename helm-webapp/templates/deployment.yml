@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: asian-food-container
-          image: cheulong/{{ .Values.appName}}:{{ .Values.imageTag }}
+          image: cheulong/asian-food-web-prod:{{ .Values.imageTag }}
           ports:
             - containerPort: 80
